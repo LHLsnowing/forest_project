@@ -2,7 +2,7 @@
 @Component
 struct Index {
   @State message: string = 'Hello World'
-  // aaa aaa
+  // aaa aaa aaa  wwwdaw
   build() {
     Row() {
       Column() {
@@ -14,6 +14,7 @@ struct Index {
           .fontWeight(FontWeight.Bold)
       }
       .width('100%')
+      //新测试git——lhl
     }
     .height('100%')
   }
