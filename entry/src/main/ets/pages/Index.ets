@@ -2,7 +2,7 @@
 @Component
 struct Index {
   @State message: string = 'Hello World'
-
+  // aaa
   build() {
     Row() {
       Column() {
