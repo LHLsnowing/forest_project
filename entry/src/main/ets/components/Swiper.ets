@@ -33,7 +33,7 @@ export default  struct SwiperExample {
         LazyForEach(this.data, (item: NewsData) => {
           Image(item.imgurl)
             .width("100%")
-            .height(160)
+            .height(300)
           // Image($r(`"app.media.lzz"+${item}`))
           //   .width("100%")
           // Text(item).width('90%').height(160).backgroundColor(0xAFEEEE).textAlign(TextAlign.Center).fontSize(30)

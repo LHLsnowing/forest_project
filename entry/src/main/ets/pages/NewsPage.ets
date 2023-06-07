@@ -1,14 +1,19 @@
 //资讯页面
-import SwiperExample from "../components/Swiper"
+import SwiperExample from "../components/Swiper";
+import HotNews from "../components/HotNews";
 
 @Preview
 @Component
-struct NewsPage{
+export default struct NewsPage{
   build(){
     Column(){
-      SwiperExample()
-        .width("100%")
-        .height("50%")
+      Flex({direction:FlexDirection.Column}){ //纵 flex
+        SwiperExample()
+          .width("100%")
+        HotNews()
+          .width("100%")
+          .margin("5px")
+      }
     }
   }
 }

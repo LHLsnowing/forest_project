@@ -1,3 +1,4 @@
+import NewsPage from "./NewsPage"
 @Entry
 @Component
 struct Tab{
@@ -41,7 +42,8 @@ struct Tab{
     Stack(){
       Tabs({barPosition: BarPosition.End}){
         TabContent(){
-          //此处调用咨询组件
+          //此处调用资讯组件
+          NewsPage();
         }
         .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯'))
         TabContent(){
