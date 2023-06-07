@@ -13,9 +13,66 @@
 /ets/pages/FindMore.ets #发现详情页面组件写在这里
 /ets/pages/DeedMore.ets #事迹详情页面组件写在这里
 /ets/components #存放组件
+/ets/
 ```
 
-需要有7个页面进行编写
+## 数据类型说明
+>一共有三个需要存储的数据
+>>分别是资讯页，发现页，事迹页
+
+资讯数据结构
+
+```python
+export interface NewsData{
+  id:number //数据库主键无实际意义
+  title:string //标题可在资讯列表显示
+  imgurl:string //图片链接可在资讯列表显示
+  url:string //资讯链接主要用于资讯详情页
+}
+```
+
+发现数据结构
+
+```python
+export interface FindData{
+  id:number //数据库主键无实际意义
+  title:string //标题可在发现显示
+  imgurl:string //图片链接可在发现展示
+  url:string //视频链接主要用于播放视频
+}
+```
+
+事迹数据结构
+
+```python
+export interface DeedData{//事迹数据类型
+  id:number //数据库主键无实际意义
+  name:string //名字可在事迹列表显示
+  imgurl:string //图片链接可用于显示人物头像
+  honor:string //放在人物名字下小字用于比如荣获***
+  inform:string //主要对人物跳转之后详情页介绍，存放大段文字
+}
+import {NewsData,FindData,DeedData,DataOp} from  "../DataOp/DataOp"
+```
+## 如何使用？
+```python
+导入的代码：
+import {NewsData,FindData,DeedData,DataOp} from  "../DataOp/DataOp"
+调用的代码：
+创建对应数组的类型，创建dataop对象
+如：
+DataOP:DataOp=new DataOp()
+Data:NewsData[]=DataOp.getNews()
+此时Data里存放了数据
+遍历或者是直接使用即可
+如
+Text(this.Data[0].title)
+Image(this.Data[0].imgurl)
+```
+
+## 页面
+
+>需要有7个页面进行编写
 ## 资讯页面
 相关参考写在这里
 
