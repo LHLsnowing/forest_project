@@ -1,17 +1,17 @@
 @Entry
 @Component
-struct Tab{
+struct TabBuilder{
   @State currentIndex:number=0 //初始化标签状态
   @State selectedFontColor:string='#1afa29'    //底部文字选中颜色
   @State fontColor:string='#707070'            //底部文字默认颜色
-  @State home1:string='/common/home1.png'
-  @State home2:string='/common/home2.png'
-  @State discover1:string='/common/discover1.png'
-  @State discover2:string='/common/discover2.png'
-  @State tree1:string='/common/tree1.png'
-  @State tree2:string='/common/tree2.png'
-  @State person1:string='/common/person1.png'
-  @State person2:string='/common/person2.png'
+  @State home1:string='../common/home1.png'
+  @State home2:string='../common/home2.png'
+  @State discover1:string='../common/discover1.png'
+  @State discover2:string='../common/discover2.png'
+  @State tree1:string='../common/tree1.png'
+  @State tree2:string='../common/tree2.png'
+  @State person1:string='../common/person1.png'
+  @State person2:string='../common/person2.png'
   @Builder TabBuilder(index:number, imageSrc1:string, imageSrc2:string, tabName:string){
     /*
     * index: 标签序号
@@ -37,34 +37,26 @@ struct Tab{
   }
 
   build(){
-    Stack(){
-      Tabs({barPosition: BarPosition.End}){
-        TabContent(){
-          home()
+      Stack(){
+        Tabs({barPosition: BarPosition.End}){
+          TabContent(){
+            home()
+          }
+          .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯'))
+          TabContent(){
+            discover()
+          }
+          .tabBar(this.TabBuilder(0,this.discover1,this.discover2,'发现'))
+          TabContent(){
+            tree()
+          }
+          .tabBar(this.TabBuilder(0,this.tree1,this.tree2,'介绍'))
+          TabContent(){
+            person()
+          }
+          .tabBar(this.TabBuilder(0,this.person1,this.person2,'事迹'))
         }
-        .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯'))
-        TabContent(){
-          discover()
-        }
-        .tabBar(this.TabBuilder(1,this.discover1,this.discover2,'发现'))
-        TabContent(){
-          tree()
-        }
-        .tabBar(this.TabBuilder(2,this.tree1,this.tree2,'介绍'))
-        TabContent(){
-          person()
-        }
-        .tabBar(this.TabBuilder(3,this.person1,this.person2,'事迹'))
       }
-      .barWidth('100%')
-      .barHeight('10%')
-      .barMode(BarMode.Fixed)
-      .vertical(false)
-      .onChange((index: number)=>{
-        this.currentIndex=index
-      })
-    }
-    .width('100%')
   }
 }
 
@@ -99,8 +91,6 @@ struct discover{
       }
       .backgroundColor('#dbdbdb')
     }
-    .width('100%')
-    .height('100%')
   }
 }
 
@@ -117,8 +107,6 @@ struct tree{
       }
       .backgroundColor('#dbdbdb')
     }
-    .width('100%')
-    .height('100%')
   }
 }
 
@@ -135,7 +123,5 @@ struct person{
       }
       .backgroundColor('#dbdbdb')
     }
-    .width('100%')
-    .height('100%')
   }
 }
