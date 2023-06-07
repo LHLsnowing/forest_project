@@ -1,6 +1,9 @@
 @Component
 struct test{
   build(){
-  ///aaaaaew
+  ///aa
+    Button()
+      .width("100px")
+      .height("100px")
   }
 }
