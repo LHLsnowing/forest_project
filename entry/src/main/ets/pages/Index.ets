@@ -1,4 +1,4 @@
-import {find} from './FindPage'
+import find from './FindPage'
 import NewsPage from "./NewsPage"
 @Entry
 @Component

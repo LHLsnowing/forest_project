@@ -3,7 +3,7 @@ import {FindData} from '../DataOp/DataOp'
 
 @Entry
 @Component
-struct find{
+export default struct find{
   @State Data:FindData[]=DataOp.getFind()
   @State alignListItem: ListItemAlign = ListItemAlign.Start
   build(){
