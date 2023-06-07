@@ -41,19 +41,19 @@ struct Tab{
     Stack(){
       Tabs({barPosition: BarPosition.End}){
         TabContent(){
-          home()//调用咨询组件
+          //此处调用咨询组件
         }
         .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯'))
         TabContent(){
-          discover()//调用发现组件
+          //此处调用发现组件
         }
         .tabBar(this.TabBuilder(1,this.discover1,this.discover2,'发现'))
         TabContent(){
-          tree()//调用介绍组件
+          //此处调用介绍组件
         }
         .tabBar(this.TabBuilder(2,this.tree1,this.tree2,'介绍'))
         TabContent(){
-          person()//调用事迹组件
+          //此处调用事迹组件
         }
         .tabBar(this.TabBuilder(3,this.person1,this.person2,'事迹'))
       }
@@ -69,74 +69,3 @@ struct Tab{
   }
 }
 
-@Component
-struct home{ //ljp 构造资讯组件
-  build(){
-    Column(){
-      Row(){
-        Text('资讯')
-          .textAlign(1)
-          .width("100%")
-          .height("8%")
-          .fontSize('25sp')
-      }
-      .backgroundColor('#dbdbdb')
-    }
-    .width('100%')
-    .height('100%')
-  }
-}
-
-@Component
-struct discover{//ljp 构造发现组件
-  build(){
-    Column(){
-      Row(){
-        Text('发现')
-          .textAlign(1)
-          .width("100%")
-          .height("8%")
-          .fontSize('25sp')
-      }
-      .backgroundColor('#dbdbdb')
-    }
-    .width('100%')
-    .height('100%')
-  }
-}
-
-@Component
-struct tree{//ljp 构建介绍组件
-  build(){
-    Column(){
-      Row(){
-        Text('介绍')
-          .textAlign(1)
-          .width("100%")
-          .height("8%")
-          .fontSize('25sp')
-      }
-      .backgroundColor('#dbdbdb')
-    }
-    .width('100%')
-    .height('100%')
-  }
-}
-
-@Component
-struct person{//ljp 构建事迹组件
-  build(){
-    Column(){
-      Row(){
-        Text('事迹')
-          .textAlign(1)
-          .width("100%")
-          .height("8%")
-          .fontSize('25sp')
-      }
-      .backgroundColor('#dbdbdb')
-    }
-    .width('100%')
-    .height('100%')
-  }
-}
