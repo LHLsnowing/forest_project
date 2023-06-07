@@ -1,3 +1,4 @@
+import {find} from './FindPage'
 @Entry
 @Component
 struct Tab{
@@ -45,7 +46,7 @@ struct Tab{
         }
         .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯'))
         TabContent(){
-          //此处调用发现组件
+          find()//此处调用发现组件
         }
         .tabBar(this.TabBuilder(1,this.discover1,this.discover2,'发现'))
         TabContent(){
