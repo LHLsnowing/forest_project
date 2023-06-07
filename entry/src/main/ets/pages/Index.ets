@@ -1,7 +1,7 @@
 @Entry
 @Component
 struct Tab{
-  @State currentIndex:number=0 //初始化标签状态
+  @State currentIndex:number=0 //初始化标签状态g
   @State selectedFontColor:string='#1afa29'    //底部文字选中颜色
   @State fontColor:string='#707070'            //底部文字默认颜色
   @State home1:string='/common/home1.png'      //咨询未选择图标
