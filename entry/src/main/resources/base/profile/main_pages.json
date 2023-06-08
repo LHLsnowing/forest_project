@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/Index",
-    "pages/NewsMore"
+    "pages/NewsMore",
+    "pages/FindMore"
   ]
 }
