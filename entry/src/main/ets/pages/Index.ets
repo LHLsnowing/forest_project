@@ -1,6 +1,7 @@
 import find from './FindPage'
 import NewsPage from "./NewsPage"
 import IntroducePage from "./IntroducePage"
+import DeedPage from "./DeedPage"
 @Entry
 @Component
 struct Tab{
@@ -51,7 +52,6 @@ struct Tab{
               .height("8%")
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
-            Divider()
             //此处调用资讯组件
             NewsPage()
           }
@@ -65,7 +65,6 @@ struct Tab{
               .height("8%")
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
-            Divider()
             //此处调用发现组件
             find()
           }
@@ -93,9 +92,8 @@ struct Tab{
               .height("8%")
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
-            Divider()
             //此处调用事迹组件
-
+          DeedPage()
           }
         }
         .tabBar(this.TabBuilder(3,this.person1,this.person2,'事迹'))
