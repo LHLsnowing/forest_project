@@ -28,9 +28,9 @@ export class  DataOp{
   }
   static getFind(){
     const result=[]
-    result[0]={id:0,title:"一个标题1",imgurl:"/common/person1.png",url:"https://www.forestry.gov.cn/u/cms/www/202306/07093314vpkm.mp4"};
-    result[1]={id:1,title:"一个标题2",imgurl:"/common/person1.png",url:"https://www.forestry.gov.cn/u/cms/www/202306/07093314vpkm.mp4"};
-    result[2]={id:2,title:"一个标题3",imgurl:"/common/person1.png",url:"https://www.forestry.gov.cn/u/cms/www/202306/07093314vpkm.mp4"};
+    result[0]={id:0,title:"林场风采",imgurl:"/common/picture2.png",url:"https://www.forestry.gov.cn/u/cms/www/202306/07093314vpkm.mp4"};
+    result[1]={id:1,title:"习总书记为我们算出生态帐",imgurl:"/common/picture1.png",url:"http://www.forestry.gov.cn/html/main/main_586/20230303081811522399946/20230303082501335633493_.mp4"};
+    result[2]={id:2,title:"讲不完的油茶树的故事",imgurl:"/common/picture3.png",url:"http://www.forestry.gov.cn/html/main/main_586/20230225083200111432787/20230225083906501549840_.mp4"};
     return result
   }
   static getDeed(){

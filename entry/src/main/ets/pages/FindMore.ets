@@ -30,8 +30,7 @@ struct FindMore{
           Text(this.data.title)
             .fontSize(20)
             .fontColor(Color.White)
-            .textAlign(TextAlign.Start)
-            .margin({left:220})
+            .textAlign(TextAlign.Center)
             .height('100%')
             .width('100%')
         }
