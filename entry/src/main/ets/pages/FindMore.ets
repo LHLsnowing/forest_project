@@ -1,6 +1,7 @@
 //发现页面
 import router from '@ohos.router'
-import { DataOp,FindData } from '../DataOp/DataOp'
+import colorSpaceManager from '@ohos.graphics.colorSpaceManager'
+import {FindData } from '../DataOp/DataOp'
 @Entry
 @Component
 struct FindMore{
@@ -8,6 +9,7 @@ struct FindMore{
   @State curRate: PlaybackSpeed = PlaybackSpeed.Speed_Forward_1_00_X
   @State isAutoPlay: boolean = false
   @State showControls: boolean = true
+  @State fullScreen: boolean = false
   controller: VideoController = new VideoController()
   build(){
     Column(){
@@ -15,9 +17,9 @@ struct FindMore{
         Column(){
           Image('/common/back.png')
             .objectFit(ImageFit.Contain)
-            .height('100%')
-            .width('100%')
-            .margin({left:5})
+            .height(24)
+            .width(24)
+            .margin({left:10,top:15})
             .onClick(()=>{
               router.back()
             })
@@ -27,16 +29,18 @@ struct FindMore{
         Column(){
           Text(this.data.title)
             .fontSize(20)
+            .fontColor(Color.White)
+            .textAlign(TextAlign.Start)
+            .margin({left:220})
             .height('100%')
             .width('100%')
-            .textAlign(TextAlign.Center)
         }
         .height('100%')
         .width('90%')
       }
       .width('100%')
       .height('8%')
-      .backgroundColor('#f7f7f7')
+      .backgroundColor(Color.Black)
       Row(){
         Video({
           src: this.data.url,
@@ -45,10 +49,37 @@ struct FindMore{
           controller: this.controller
         }).width('100%')
           .height(250)
+          .margin({bottom:50})
           .autoPlay(this.isAutoPlay)
           .controls(this.showControls)
-
+          .onStart(()=>{
+            console.info('onStart')
+          })
+          .onPause(()=>{
+            console.info('onPause')
+          })
+          .onFinish(()=>{
+            console.info('onFinish')
+          })
+          .onError(()=>{
+            console.info('播放错误')
+          })
+          .onPrepared((e) => {
+            console.info('onPrepared is ' + e.duration)
+          })
+          .onSeeking((e) => {
+            console.info('onSeeking is ' + e.time)
+          })
+          .onSeeked((e) => {
+            console.info('onSeeked is ' + e.time)
+          })
+          .onUpdate((e) => {
+            console.info('onUpdate is ' + e.time)
+          })
       }
+      .width('100%')
+      .height('100%')
+      .backgroundColor(Color.Black)
     }
   }
 }
