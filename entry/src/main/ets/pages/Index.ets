@@ -77,7 +77,6 @@ struct Tab{
               .fontSize('25sp')
             Divider()
             //此处调用介绍组件
-            find()
           }
         }
         .tabBar(this.TabBuilder(2,this.tree1,this.tree2,'介绍'))
