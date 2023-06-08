@@ -43,20 +43,55 @@ struct Tab{
     Stack(){
       Tabs({barPosition: BarPosition.End}){
         TabContent(){
-          //此处调用资讯组件
-          NewsPage();
+          Column(){
+            Text('资讯')
+              .textAlign(1)
+              .width("100%")
+              .height("8%")
+              .fontSize('25sp')
+            Divider()
+            //此处调用资讯组件
+            NewsPage()
+          }
         }
         .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯'))
         TabContent(){
-          find()//此处调用发现组件
+          Column(){
+            Text('发现')
+              .textAlign(1)
+              .width("100%")
+              .height("8%")
+              .fontSize('25sp')
+            Divider()
+            //此处调用发现组件
+            find()
+          }
         }
         .tabBar(this.TabBuilder(1,this.discover1,this.discover2,'发现'))
         TabContent(){
-          //此处调用介绍组件
+          Column(){
+            Text('介绍')
+              .textAlign(1)
+              .width("100%")
+              .height("8%")
+              .fontSize('25sp')
+            Divider()
+            //此处调用介绍组件
+            find()
+          }
         }
         .tabBar(this.TabBuilder(2,this.tree1,this.tree2,'介绍'))
         TabContent(){
-          //此处调用事迹组件
+          Column(){
+            Text('事迹')
+              .textAlign(1)
+              .width("100%")
+              .height("8%")
+              .fontSize('25sp')
+            Divider()
+            //此处调用事迹组件
+
+          }
         }
         .tabBar(this.TabBuilder(3,this.person1,this.person2,'事迹'))
       }
