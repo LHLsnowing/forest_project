@@ -1,5 +1,6 @@
 // NewsPage-轮播图
 import { DataOp,NewsData } from "../DataOp/DataOp";
+import router from '@ohos.router';
 class MyDataSource implements IDataSource {
   public list: NewsData[] = DataOp.getNews() //result数组 内涵url title imgurl id
   private listener: DataChangeListener
@@ -26,7 +27,21 @@ export default  struct SwiperExample {
   private swiperController: SwiperController = new SwiperController()
   //private result:NewsData[] = DataOp.getNews();
   private data: MyDataSource = new MyDataSource();
+  @State urlValue:String =""; // 作为参数，result中url
 
+  routePage(){
+    router.pushUrl({
+      url: 'pages/NewsMore',
+      params: {
+        value: this.urlValue,
+      },
+    }).then(() => {
+      // success
+    })
+      .catch(err => {
+        console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
+      });
+  }
   build() {
     Column({ space: 10 }) {
       Swiper(this.swiperController) {
@@ -34,6 +49,10 @@ export default  struct SwiperExample {
           Image(item.imgurl)
             .width("100%")
             .height(300)
+            .onClick(()=>{
+              this.urlValue=item.url;
+              this.routePage();
+            })
 
         }, item => item)
       }

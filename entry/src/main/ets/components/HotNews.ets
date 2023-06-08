@@ -1,12 +1,25 @@
 // NewsPage 热门资讯部分
 import { DataOp,NewsData } from "../DataOp/DataOp";
-import data from '@ohos.telephony.data';
+import router from '@ohos.router';
 
 @Preview
 @Component
-
 export default struct HotNews {
+  @State urlValue:String =""; // 作为参数，result中url
   private result: NewsData[] = DataOp.getNews();
+  routePage(){
+      router.pushUrl({
+                url: 'pages/NewsMore',
+                params: {
+                  value: this.urlValue,
+                },
+              }).then(() => {
+              // success
+               })
+              .catch(err => {
+                console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
+              });
+  }
   build() {
     Column() {
       // Text(""+this.result.length)
@@ -25,6 +38,10 @@ export default struct HotNews {
               .margin("0")
               .border({width:1})
               .textAlign(TextAlign.Start).borderRadius(2).backgroundColor(0xFFFFFF)
+              .onClick(()=>{
+                this.urlValue=item.url;
+                this.routePage();
+              })
           }
         })
       }.width('90%')
