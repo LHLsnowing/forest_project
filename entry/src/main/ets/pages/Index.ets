@@ -52,6 +52,7 @@ struct Tab{
               .height("8%")
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
+              .fontWeight(FontWeight.Bold)
             //此处调用资讯组件
             NewsPage()
           }
@@ -65,6 +66,7 @@ struct Tab{
               .height("8%")
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
+              .fontWeight(FontWeight.Bold)
             //此处调用发现组件
             find()
           }
@@ -78,6 +80,7 @@ struct Tab{
               .height("8%")
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
+              .fontWeight(FontWeight.Bold)
             Divider()
             IntroducePage()
             //此处调用介绍组件
@@ -92,6 +95,7 @@ struct Tab{
               .height("8%")
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
+              .fontWeight(FontWeight.Bold)
             //此处调用事迹组件
           DeedPage()
           }
