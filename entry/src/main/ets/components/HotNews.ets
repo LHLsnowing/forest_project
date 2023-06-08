@@ -21,36 +21,47 @@ export default struct HotNews {
               });
   }
   build() {
+
     Column() {
       // Text(""+this.result.length)
-      Divider(); //分割线
-      Text("热门资讯")
-        .width("100%")
-        .fontSize(20)
-        .textAlign(TextAlign.Center)
-        .margin("10px")
-      Divider()
-        .margin("10px 10px");
-      List({ space: 1, initialIndex: 0 }) {
-        ForEach(this.result, (item) => {
-          ListItem() {
-            Flex({direction:FlexDirection.Row}){
-              Image(item.imgurl)
-                .width("30%")
-                .height(80)
-                .margin("15px")
-              Text(item.title) // 待改
-                .width('100%').height(80).fontSize(16)
-                .textAlign(TextAlign.Start).borderRadius(5).backgroundColor(0xFFFFFF)
-                .onClick(()=>{
-                  this.urlValue=item.url;
-                  this.routePage();
-                })
-            }.margin("0px 10px")
-          }
-        })
-      }.width('98%')
+     Column(){
+       Divider(); //分割线
+       Text("热门资讯")
+         .fontSize(20)
+         .textAlign(TextAlign.Center)
+         .padding({top:10,bottom:10})
+       Divider();
+     }.borderRadius(5)
+     .backgroundColor("#e0f8eb")
+     .margin({left:20,right:20})
+      .width("90%")
 
+      Column(){
+        List({ space: 1, initialIndex: 0 }) {
+          ForEach(this.result, (item) => {
+            ListItem() {
+              Flex({direction:FlexDirection.Column}){
+                Flex({direction:FlexDirection.Row}){
+                  Image(item.imgurl)
+                    .width("35%")
+                    .height(80)
+                    .margin({top:10,left:5,right:5,bottom:10})
+                  Text(item.title) // 待改
+                    .width('100%').height(85).fontSize(16)
+                    .padding({top:10,left:10,right:10,bottom:10})
+                    .textAlign(TextAlign.Start).borderRadius(5).backgroundColor(0xFFFFFF)
+                    .onClick(()=>{
+                      this.urlValue=item.url;
+                      this.routePage();
+                    })
+                }
+                Divider();
+              }.margin({left:5,right:5})
+            }
+          })
+        }
+      }
+      .margin({top:10})
       .backgroundColor("#F7F7F7")
     }.width('100%').height('100%').backgroundColor("#F7F7F7").padding({ top: 10 })
   }

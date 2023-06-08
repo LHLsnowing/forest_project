@@ -20,7 +20,7 @@ export default struct IntroducePage {
         Column(){
           Text("https://baike.baidu.com/item/林长制")
             .margin({top:20})
-            .padding({bottom:10,right:10})
+            .padding({bottom:5,right:10})
             .fontColor("#89bf9b")
             .onClick(()=>{
               router.pushUrl({url:"pages/NewsMore",params:{
@@ -28,7 +28,7 @@ export default struct IntroducePage {
               }});
             })
           Text(this.msg)
-            .fontSize(16)
+            .fontSize(15)
             .fontColor("#CC0000")
             .padding({top:10,left:10,right:10,bottom:30})
         }.borderRadius(10)
