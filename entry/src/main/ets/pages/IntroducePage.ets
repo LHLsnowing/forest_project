@@ -18,18 +18,20 @@ export default struct IntroducePage {
           .linearGradient({colors:["#f3f3f3","black"]})
 
         Column(){
-          Text("https://baike.baidu.com/item/林长制")
+          Text("https://baike.baidu.com/item/林长制(点击链接)")
             .margin({top:20})
             .padding({bottom:5,right:10})
             .fontColor("#89bf9b")
             .onClick(()=>{
-              router.pushUrl({url:"pages/NewsMore",params:{
-                value:"https://baike.baidu.com/item/%E6%9E%97%E9%95%BF%E5%88%B6"
-              }});
+              router.pushUrl({
+                url: 'pages/NewsMore',
+                params: {
+                  data: "https://baike.baidu.com/item/林长制",
+                }})
             })
+          Divider()
           Text(this.msg)
             .fontSize(15)
-            .fontColor("#CC0000")
             .padding({top:10,left:10,right:10,bottom:30})
         }.borderRadius(10)
         .backgroundColor("#e9ebec")

@@ -50,14 +50,17 @@ export default struct HotNews {
                     .width('100%').height(85).fontSize(16)
                     .padding({top:10,left:10,right:10,bottom:10})
                     .textAlign(TextAlign.Start).borderRadius(5).backgroundColor(0xFFFFFF)
-                    .onClick(()=>{
-                      this.urlValue=item.url;
-                      this.routePage();
-                    })
                 }
                 Divider();
               }.margin({left:5,right:5})
             }
+            .onClick(()=>{
+              router.pushUrl({
+                url: 'pages/NewsMore',
+                params: {
+                  data: item.url,
+                }})
+            })
           })
         }
       }

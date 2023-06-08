@@ -7,19 +7,17 @@ import web_webview from '@ohos.web.webview'
 @Component
 struct WebComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController()
-  @State val:string = "";
-  aboutToAppear(){
-     this.val= router.getParams()['value'];  // 本页带修正，电脑跑不起来 试不出对错
-  }
+  @State val:string =router.getParams()['data'];;
 
   build() {
     Column() {
-        Text("返回")
-          .onClick(()=>{
-            router.back({url:'pages/Index'})
-          })
         Web({ src: this.val,
           controller: this.controller })
+          .height("80%")
+          .userAgent("Mozilla/5.0 (Linux; Android 12; HarmonyOS; OCE-AN10; HMSCore 6.8.0.332) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.88 HuaweiBrowser/13.0.0.303 Mobile Safari/537.36")
+        Button("返回").onClick(()=>{
+        router.back({url:'pages/Index'});
+        }).width("95%").height("10%").borderRadius(20).type(ButtonType.Normal).backgroundColor("#a8d8b9").fontColor(Color.Black).margin({top:10})
     }
   }
 }
