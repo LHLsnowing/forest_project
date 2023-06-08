@@ -29,22 +29,29 @@ export default struct HotNews {
         .fontSize(20)
         .textAlign(TextAlign.Center)
         .margin("10px")
-      Divider();
+      Divider()
+        .margin("10px 10px");
       List({ space: 1, initialIndex: 0 }) {
         ForEach(this.result, (item) => {
           ListItem() {
-            Text(item.title) // 待改
-              .width('100%').height(80).fontSize(16)
-              .margin("0")
-              .border({width:1})
-              .textAlign(TextAlign.Start).borderRadius(2).backgroundColor(0xFFFFFF)
-              .onClick(()=>{
-                this.urlValue=item.url;
-                this.routePage();
-              })
+            Flex({direction:FlexDirection.Row}){
+              Image(item.imgurl)
+                .width("30%")
+                .height(80)
+                .margin("15px")
+              Text(item.title) // 待改
+                .width('100%').height(80).fontSize(16)
+                .textAlign(TextAlign.Start).borderRadius(5).backgroundColor(0xFFFFFF)
+                .onClick(()=>{
+                  this.urlValue=item.url;
+                  this.routePage();
+                })
+            }.margin("0px 10px")
           }
         })
-      }.width('90%')
-    }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
+      }.width('98%')
+
+      .backgroundColor("#F7F7F7")
+    }.width('100%').height('100%').backgroundColor("#F7F7F7").padding({ top: 10 })
   }
 }
