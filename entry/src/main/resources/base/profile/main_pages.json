@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/NewsMore",
-    "pages/FindMore"
+    "pages/FindMore",
+    "pages/DeedMore"
   ]
 }

@@ -59,9 +59,8 @@ import {NewsData,FindData,DeedData,DataOp} from  "../DataOp/DataOp"
 导入的代码：
 import {NewsData,FindData,DeedData,DataOp} from  "../DataOp/DataOp"
 调用的代码：
-创建对应数组的类型，创建dataop对象
+创建对应数组的类型，直接调用DataOp的静态方法
 如：
-DataOP:DataOp=new DataOp()
 Data:NewsData[]=DataOp.getNews()
 此时Data里存放了数据
 遍历或者是直接使用即可
