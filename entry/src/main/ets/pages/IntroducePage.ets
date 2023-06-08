@@ -1,1 +1,78 @@
 //介绍页面组件
+import router from '@ohos.router';
+@Preview
+@Component
+export default struct IntroducePage {
+  private msg:string ="林长制，是指按照“分级负责”原则，构建省市县乡村五级林长制体系，各级林长负责督促指导本责任区内森林资源保护发展工作，协调解决森林资源保护发展重大问题，依法查处各类破坏森林资源的违法犯罪行为";
+  build(){
+    Column(){
+      Flex({direction:FlexDirection.Column}){
+        Text("林长制")
+          .fontSize(45)
+          .fontWeight(FontWeight.Bold)
+          .shadow({radius:1,offsetX:1,offsetY:1})
+          .textAlign(TextAlign.Start)
+          .opacity(0.8)
+          .margin({top:20,left:20})
+          .padding({bottom:20,right:10})
+          .linearGradient({colors:["#f3f3f3","black"]})
+
+        Column(){
+          Text("https://baike.baidu.com/item/林长制")
+            .margin({top:20})
+            .padding({bottom:10,right:10})
+            .fontColor("#89bf9b")
+            .onClick(()=>{
+              router.pushUrl({url:"pages/NewsMore",params:{
+                value:"https://baike.baidu.com/item/%E6%9E%97%E9%95%BF%E5%88%B6"
+              }});
+            })
+          Text(this.msg)
+            .fontSize(16)
+            .fontColor("#CC0000")
+            .padding({top:10,left:10,right:10,bottom:30})
+        }.borderRadius(10)
+        .backgroundColor("#e9ebec")
+        .margin({top:10,left:20,right:20,bottom:10})
+
+        Column(){
+          Text("推出目标")
+            .padding({top:10,bottom:6})
+          Divider();
+          Text("安徽省安庆市以林长制为抓手，全力全域推进，大力推动林业高质量发展，实现了森林的生态、经济和社会三大效益协同发展。")
+            .fontSize(15)
+            .padding({top:10,left:10,right:10,bottom:30})
+        }
+        .borderRadius(10)
+        .backgroundColor("#EFF5F0")
+        // .padding("10px 100px")
+        .margin({top:10,left:20,right:20,bottom:10})
+
+        Column(){
+          Text("各地实施")
+            .padding({top:10,bottom:6})
+          Divider();
+          Text("安徽省安庆市以林长制为抓手，全力全域推进，大力推动林业高质量发展，实现了森林的生态、经济和社会三大效益协同发展。如今，绿色森林正带来实实在在的真金白银。")
+            .fontSize(15)
+            .padding({top:10,left:10,right:10,bottom:30})
+        }
+        .borderRadius(10)
+        .backgroundColor("#F3F2F2")
+        .margin({left:20,right:20,bottom:10})
+
+        Column(){
+          Text("国务院政策")
+            .padding({top:10,bottom:6})
+          Divider();
+          Text("2019年4月，国家林草局同意支持安徽省创建全国林长制改革示范区。根据《安徽省创建全国林长制改革示范区实施方案》，安徽省提出五大任务17项具体举措，其中包括强化护绿，切实保障林业生态安全，加强自然保护地统一监管、林业资源安全巡护、生物多样性保护")
+            .fontSize(15)
+            .padding({top:10,left:10,right:10,bottom:30})
+        }
+        .borderRadius(10)
+        .backgroundColor("#D2C9C2")
+        .margin({left:20,right:20,bottom:10})
+      }
+    }
+    .backgroundColor("#F4F8FC")
+  }
+}

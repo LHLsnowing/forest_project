@@ -1,5 +1,6 @@
 import find from './FindPage'
 import NewsPage from "./NewsPage"
+import IntroducePage from "./IntroducePage"
 @Entry
 @Component
 struct Tab{
@@ -79,6 +80,7 @@ struct Tab{
               .fontSize('25sp')
               .backgroundColor("#F7F7F7")
             Divider()
+            IntroducePage()
             //此处调用介绍组件
           }
         }
