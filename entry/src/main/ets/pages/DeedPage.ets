@@ -37,7 +37,7 @@ export default  struct DeedPage{
             angle:170,
             colors: [["#fbe362", 0.0], ["#f4f4f4", 0.3],["#f4f4f4", 1]]
           })
-          .margin({top:10})
+          .margin({top:10,bottom:5})
           .onClick(()=>{
             router.pushUrl({
               url: 'pages/DeedMore',
@@ -47,6 +47,6 @@ export default  struct DeedPage{
           })
         })
       }.width("95%")
-    }.width('100%').height('100%').padding({ top: 5 })
+    }.width('100%').height('100%').padding({ top: 5})
   }
 }

@@ -7,24 +7,15 @@ export default struct find{
   @State alignListItem: ListItemAlign = ListItemAlign.Start
   build(){
     Column() {
-      Row(){
-        List({initialIndex:0}){
+      Flex({wrap:FlexWrap.Wrap}){
           ForEach(this.Data,item=>{
-            ListItem(){
               picture({data:item})
-            }
-            .margin({bottom:5})
-          },item=>item.id.toString())
+                .margin({bottom:5})
+          })
         }
-        .width('100%')
-        .height('100%')
-        .lanes({minLength:200, maxLength:200})
-        .alignListItem(this.alignListItem)
-      }
     }
     .width('100%')
     .height('100%')
-    .backgroundColor(Color.White)
   }
 }
 
@@ -33,11 +24,8 @@ struct picture{
   private data:FindData
   build() {
     Column(){
-      Row(){
+
         Image(this.data.imgurl)
-          //.objectFit(ImageFit.Contain)
-          .height('100%')
-          .width('100%')
           .onClick(()=>{
             router.pushUrl({
               url:'pages/FindMore',
@@ -51,10 +39,8 @@ struct picture{
               .catch(err =>{
                 console.error('pushUrl failed, code is ${err.code}, message is ${err.message}')
               })
-          })
-      }
-      .width('100%')
-      .height('92%')
+          }).width('100%').height('92%').objectFit(ImageFit.Fill)
+
       Row(){
         Text(this.data.title)
           .fontSize(20)
@@ -63,11 +49,11 @@ struct picture{
           .width('100%')
           .textAlign(TextAlign.Center)
       }
-      .backgroundColor("#6e9abf")
-      .width('100%')
-      .height('8%')
-    }
-    .width('100%')
-    .height(300)
+      .backgroundColor("#6e9abf").width('100%').height('8%')
+    }.shadow({radius:1,offsetX:7,offsetY:7,color:"#c0c0c0"})
+    .width('45%')
+    .height("40%")
+    .align(Alignment.Center)
+    .margin({bottom:10,left:"2%",right:"2%"})
   }
 }
