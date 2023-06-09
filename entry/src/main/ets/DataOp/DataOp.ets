@@ -31,11 +31,13 @@ export class  DataOp{
     result[0]={id:0,title:"林场风采",imgurl:"/common/picture2.png",url:"https://www.forestry.gov.cn/u/cms/www/202306/07093314vpkm.mp4"};
     result[1]={id:1,title:"习总书记为我们算出生态帐",imgurl:"/common/picture1.png",url:"http://www.forestry.gov.cn/html/main/main_586/20230303081811522399946/20230303082501335633493_.mp4"};
     result[2]={id:2,title:"讲不完的油茶树的故事",imgurl:"/common/picture3.png",url:"http://www.forestry.gov.cn/html/main/main_586/20230225083200111432787/20230225083906501549840_.mp4"};
+    result[3]={id:3,title:"走进塞外明珠",imgurl:"/common/picture4.png",url:"http://www.forestry.gov.cn/u/cms/www/202306/07085023ww8q.mp4"};
+    result[4]={id:4,title:"走进巴彦淖尔临河区国营新华林场",imgurl:"/common//picture5.png",url:"http://www.forestry.gov.cn/u/cms/www/202306/07170545txah.mp4"}
     return result
   }
   static getDeed(){
     const result=[]
-    result[0]={id:0,name:"王王王",imgurl:"/common/person1.png",honor:"文字荣耀",inform:"文字信息123456详情"};
+    result[0]={id:0,name:"王明海",imgurl:"/common/person1.png",honor:"守好森林稳定脱贫",inform:"文字信息123456详情"};
     result[1]={id:1,name:"王王王2",imgurl:"/common/person1.png",honor:"文字荣耀",inform:"文字信息123456详情"};
     result[2]={id:2,name:"王王王3",imgurl:"/common/person1.png",honor:"文字荣耀",inform:"文字信息123456详情"};
     return result
