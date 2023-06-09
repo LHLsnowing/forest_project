@@ -6,7 +6,7 @@ import DeedPage from "./DeedPage"
 @Component
 struct Tab{
   @State currentIndex:number=0 //初始化标签状态g
-  @State selectedFontColor:string='#1afa29'    //底部文字选中颜色
+  //@State selectedFontColor:string='#1afa29'    //底部文字选中颜色
   @State fontColor:string='#707070'            //底部文字默认颜色
   @State home1:string='/common/home1.png'      //咨询未选择图标
   @State home2:string='/common/home2.png'      //咨询选择图标
@@ -16,7 +16,7 @@ struct Tab{
   @State tree2:string='/common/tree2.png'        //介绍选择图标
   @State person1:string='/common/person1.png'    //事迹未选择图标
   @State person2:string='/common/person2.png'    //事迹选择图标
-  @Builder TabBuilder(index:number, imageSrc1:string, imageSrc2:string, tabName:string){
+  @Builder TabBuilder(index:number, imageSrc1:string, imageSrc2:string, tabName:string, selectedFontColor:string){
     /*
     * 编辑者：李锦鹏
     * index: 标签序号
@@ -34,7 +34,7 @@ struct Tab{
         .objectFit(ImageFit.Contain)
       Text(tabName)
         .fontSize(36)
-        .fontColor(this.currentIndex == index ? this.selectedFontColor:this.fontColor)//选中时文本颜色变化
+        .fontColor(this.currentIndex == index ? selectedFontColor:this.fontColor)//选中时文本颜色变化
         .fontSize(10)
         .fontWeight(500)
         .lineHeight(14)
@@ -49,7 +49,7 @@ struct Tab{
             NewsPage()
           }
         }
-        .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯'))
+        .tabBar(this.TabBuilder(0,this.home1,this.home2,'资讯','#db5a6b'))
         TabContent(){
           Column(){
             Text('发现')
@@ -63,14 +63,14 @@ struct Tab{
             find()
           }
         }
-        .tabBar(this.TabBuilder(1,this.discover1,this.discover2,'发现'))
+        .tabBar(this.TabBuilder(1,this.discover1,this.discover2,'发现','#6e9abf'))
         TabContent(){
           Column(){
             IntroducePage()
             //此处调用介绍组件
           }
         }
-        .tabBar(this.TabBuilder(2,this.tree1,this.tree2,'介绍'))
+        .tabBar(this.TabBuilder(2,this.tree1,this.tree2,'介绍','#a8d8b9'))
         TabContent(){
           Column(){
             Text('事迹')
@@ -84,7 +84,7 @@ struct Tab{
           DeedPage()
           }
         }
-        .tabBar(this.TabBuilder(3,this.person1,this.person2,'事迹'))
+        .tabBar(this.TabBuilder(3,this.person1,this.person2,'事迹','#fbe362'))
       }
       .barWidth('100%')
       .barHeight('10%')
