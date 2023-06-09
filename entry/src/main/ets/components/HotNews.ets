@@ -62,6 +62,7 @@ export default struct HotNews {
                 })
               }
             }
+            .margin({bottom:3})
             .width("100%")
             .onClick(()=>{
               router.pushUrl({
