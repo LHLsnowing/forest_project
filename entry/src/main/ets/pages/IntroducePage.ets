@@ -13,7 +13,7 @@ export default struct IntroducePage {
             .fontWeight(FontWeight.Bold)
             .textAlign(TextAlign.Center)
             .opacity(0.8)
-            .padding({bottom:20,top:10})
+            .padding({bottom:10,top:10})
             .width("100%")
         }.backgroundColor("#f0f0f0").margin({left:20,top:20}).borderRadius(10).width("50%").shadow({radius:1,offsetX:3,offsetY:3,color:"#c0c0c0"})
         Column(){
@@ -44,7 +44,7 @@ export default struct IntroducePage {
           Text("推出目标")
             .padding({top:10,bottom:6})
           Divider().width("90%")
-          Text("安徽省安庆市以林长制为抓手，全力全域推进，大力推动林业高质量发展，实现了森林的生态、经济和社会三大效益协同发展。")
+          Text("以林长制为抓手，全力全域推进，大力推动林业高质量发展，实现了森林的生态、经济和社会三大效益协同发展。")
             .fontSize(15)
             .padding({top:10,left:10,right:10,bottom:30})
         }
@@ -58,7 +58,7 @@ export default struct IntroducePage {
           Text("各地实施")
             .padding({top:10,bottom:6})
           Divider().width("90%")
-          Text("安徽省安庆市以林长制为抓手，全力全域推进，大力推动林业高质量发展，实现了森林的生态、经济和社会三大效益协同发展。如今，绿色森林正带来实实在在的真金白银。")
+          Text("以林长制为抓手，全力全域推进，大力推动林业高质量发展，实现了森林的生态、经济和社会三大效益协同发展。如今，绿色森林正带来实实在在的真金白银。")
             .fontSize(15)
             .padding({top:10,left:10,right:10,bottom:30})
         }

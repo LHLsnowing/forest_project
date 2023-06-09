@@ -8,11 +8,15 @@ export default struct find{
   build(){
     Column() {
       Flex({wrap:FlexWrap.Wrap}){
+        List(){
           ForEach(this.Data,item=>{
+            ListItem(){
               picture({data:item})
                 .margin({bottom:5})
+            }
           })
-        }
+        }.lanes({minLength:200,maxLength:200})
+      }
     }
     .width('100%')
     .height('100%')
@@ -24,7 +28,6 @@ struct picture{
   private data:FindData
   build() {
     Column(){
-
         Image(this.data.imgurl)
           .onClick(()=>{
             router.pushUrl({
@@ -51,7 +54,7 @@ struct picture{
       }
       .backgroundColor("#6e9abf").width('100%').height('8%')
     }.shadow({radius:1,offsetX:7,offsetY:7,color:"#c0c0c0"})
-    .width('45%')
+    .width('95%')
     .height("40%")
     .align(Alignment.Center)
     .margin({bottom:10,left:"2%",right:"2%"})
