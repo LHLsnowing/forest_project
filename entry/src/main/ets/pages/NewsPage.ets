@@ -11,8 +11,8 @@ export default struct NewsPage{
         SwiperExample()
           .width("100%")
         HotNews()
+          .align(Alignment.Center)
           .width("100%")
-          .margin("5px")
       }
     }
   }

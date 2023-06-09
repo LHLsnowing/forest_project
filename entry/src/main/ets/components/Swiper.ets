@@ -28,30 +28,19 @@ export default  struct SwiperExample {
   //private result:NewsData[] = DataOp.getNews();
   private data: MyDataSource = new MyDataSource();
   @State urlValue:String =""; // 作为参数，result中url
-
-  routePage(){
-    router.pushUrl({
-      url: 'pages/NewsMore',
-      params: {
-        value: this.urlValue,
-      },
-    }).then(() => {
-      // success
-    })
-      .catch(err => {
-        console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
-      });
-  }
   build() {
     Column({ space: 10 }) {
       Swiper(this.swiperController) {
         LazyForEach(this.data, (item: NewsData) => {
           Image(item.imgurl)
             .width("100%")
-            .height(300)
+            .height(230)
             .onClick(()=>{
-              this.urlValue=item.url;
-              this.routePage();
+              router.pushUrl({
+                url: 'pages/NewsMore',
+                params: {
+                  data: item.url,
+                }})
             })
 
         }, item => item)

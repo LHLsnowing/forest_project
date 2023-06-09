@@ -9,10 +9,10 @@ struct DeedItem{
   private honor:string
   build(){
     Row({space:30}){
-      Image(this.imgurl).width(60).height(60)
+      Image(this.imgurl).width(60).height(60).borderRadius(10)
       Column(){
         Text(this.name)
-          .fontSize(30).fontWeight(FontWeight.Bold).width("100%")
+          .fontSize(30).fontWeight(FontWeight.Regular).width("100%")
         Text(this.honor)
           .fontSize(15).width("100%")
       }
@@ -30,7 +30,13 @@ export default  struct DeedPage{
           ListItem(){
             DeedItem({name:item.name,imgurl:item.imgurl,honor:item.honor})
           }
-          .width("100%").height("10%").borderRadius(20).backgroundColor("#e0f8eb")
+          .width("100%").height("10%").borderRadius(10).borderColor("#f0f0f0").shadow({radius:1,offsetX:3,offsetY:3,color:"#c0c0c0"})
+          .linearGradient({
+            direction: GradientDirection.Top, // 渐变方向
+            //repeating: true, // 渐变颜色是否重复
+            angle:170,
+            colors: [["#fbe362", 0.0], ["#f4f4f4", 0.3],["#f4f4f4", 1]]
+          })
           .margin({top:10})
           .onClick(()=>{
             router.pushUrl({

@@ -46,14 +46,6 @@ struct Tab{
       Tabs({barPosition: BarPosition.End}){
         TabContent(){
           Column(){
-            Text('资讯')
-              .textAlign(1)
-              .width("100%")
-              .height("8%")
-              .fontSize('25sp')
-              .backgroundColor("#F7F7F7")
-              .fontWeight(FontWeight.Bold)
-            //此处调用资讯组件
             NewsPage()
           }
         }
@@ -74,14 +66,6 @@ struct Tab{
         .tabBar(this.TabBuilder(1,this.discover1,this.discover2,'发现'))
         TabContent(){
           Column(){
-            Text('介绍')
-              .textAlign(1)
-              .width("100%")
-              .height("8%")
-              .fontSize('25sp')
-              .backgroundColor("#F7F7F7")
-              .fontWeight(FontWeight.Bold)
-            Divider()
             IntroducePage()
             //此处调用介绍组件
           }
@@ -110,7 +94,6 @@ struct Tab{
         this.currentIndex=index
       })
     }
-    .width('100%')
   }
 }
 

@@ -55,7 +55,6 @@ struct picture{
       }
       .width('100%')
       .height('92%')
-      .backgroundColor(Color.White)
       Row(){
         Text(this.data.title)
           .fontSize(20)
@@ -64,15 +63,7 @@ struct picture{
           .width('100%')
           .textAlign(TextAlign.Center)
       }
-      .border({
-        radius:{topLeft:0,topRight:0,bottomLeft:20,bottomRight:20}
-      })
-      .backgroundColor('#a8d8b9')
-      /*.linearGradient({
-        direction:GradientDirection.Right,
-        repeating: true,
-        colors:[[0x1b813e,0.0],[0x227d51,0.3],[0x24936e,0.5]]
-      })*/
+      .backgroundColor("#6e9abf")
       .width('100%')
       .height('8%')
     }
